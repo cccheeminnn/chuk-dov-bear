@@ -7,16 +7,16 @@ on:
     - 'v*'
     # except anything followed by alpha
     - '!v*-alpha'
-  jobs: 
-    deploy_to_heroku:
-      runs-on: ubuntu-latest
-      steps:
-      - name: Checkout src
-        uses: action/checkout@v2
-      - name: Deploy
-        uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with: 
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "chuk-dov-bear" #Must be unique in Heroku
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
-          branch: ${{github.ref_name}} # current branch name in github
+jobs: 
+  deploy_to_heroku:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout src
+      uses: action/checkout@v2
+    - name: Deploy
+      uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      with: 
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: "chuk-dov-bear" #Must be unique in Heroku
+        heroku_email: ${{secrets.HEROKU_EMAIL}}
+        branch: ${{github.ref_name}} # current branch name in github
