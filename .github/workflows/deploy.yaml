@@ -5,7 +5,7 @@ on:
     - 'v*' # except anything followed by alpha
     - '!v*-alpha'
 jobs: 
-  build:
+  deploy_to_heroku:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout src
