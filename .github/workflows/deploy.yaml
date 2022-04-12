@@ -1,14 +1,11 @@
 name: Deploy to Heroku
 on: 
-  push: 
-    # tags is an array
-    tags:
-    # push anything with v
-    - 'v*'
-    # except anything followed by alpha
+  push: # tags is an array
+    tags: # push anything with v
+    - 'v*' # except anything followed by alpha
     - '!v*-alpha'
 jobs: 
-  deploy_to_heroku:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout src
