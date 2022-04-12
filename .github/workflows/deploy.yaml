@@ -4,7 +4,7 @@ on:
     tags: # push anything with v
     - 'v*' # except anything followed by alpha
     - '!v*-alpha'
-jobs: 
+jobs:
   deploy_to_heroku:
     runs-on: ubuntu-latest
     steps:
